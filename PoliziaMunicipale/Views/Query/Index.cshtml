@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Query";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<ul>
+    <li><a href="@Url.Action("TotaleVerbaliPerTrasgressore", "Query")">Totale Verbali per Trasgressore</a></li>
+    <li><a href="@Url.Action("TotalePuntiDecurtatiPerTrasgressore", "Query")">Totale Punti Decurtati per Trasgressore</a></li>
+    <li><a href="@Url.Action("DatiTrasgressorePerViolazioniMaggioriDi10Punti", "Query")">Dati Trasgressore per Violazioni Maggiori di 10 Punti</a></li>
+    <li><a href="@Url.Action("ViolazioniMaggioriDi400", "Query")">Violazioni Maggiori di 400</a></li>
+</ul>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<dynamic>
+
+@{
+    ViewData["Title"] = "Elenco Verbali relazionati all'anagrafe";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Indirizzo</th>
+                <th scope="col">Città</th>
+                <th scope="col">Codice Fiscale</th>
+                <th scope="col">Violazione</th>
+                <th scope="col">Data Violazione</th>
+                <th scope="col">Indirizzo Violazione</th>
+                <th scope="col">ID Agente</th>
+                <th scope="col">Data Trascrizione</th>
+                <th scope="col">Importo</th>
+                <th scope="col">Decurtamento Punti</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Cognome</td>
+                    <td>@item.Indirizzo</td>
+                    <td>@item.Citta</td>
+                    <td>@item.CodFisc</td>
+                    <td>@item.Violazione</td>
+                    <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
+                    <td>@item.IndirizzoViolazione</td>
+                    <td>@item.IDAgente</td>
+                    <td>@item.DataTrascrizione.ToString("dd/MM/yyyy")</td>
+                    <td>@String.Format("{0:C}", item.Importo)</td>
+                    <td>@item.DecurtamentoPunti</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="@Url.Action("Create", "Verbali")" class="btn btn-primary">Aggiungi Verbale</a>
+
+</div>

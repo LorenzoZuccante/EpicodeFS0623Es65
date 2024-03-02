@@ -1,0 +1,50 @@
+﻿@model PoliziaMunicipaleContext.Data.Verbale
+
+@{
+    ViewData["Title"] = "Crea Nuovo Verbale";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="DataViolazione" class="control-label">Data Violazione</label>
+        <input asp-for="DataViolazione" class="form-control" type="date" required />
+        <span asp-validation-for="DataViolazione" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IndirizzoViolazione" class="control-label">Indirizzo Violazione</label>
+        <input asp-for="IndirizzoViolazione" class="form-control" required />
+        <span asp-validation-for="IndirizzoViolazione" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IDAgente" class="control-label">ID Agente</label>
+        <input asp-for="IDAgente" class="form-control" required />
+        <span asp-validation-for="IDAgente" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DataTrascrizioneVerbale" class="control-label">Data Trascrizione Verbale</label>
+        <input asp-for="DataTrascrizioneVerbale" class="form-control" type="date" required />
+        <span asp-validation-for="DataTrascrizioneVerbale" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Importo" class="control-label">Importo</label>
+        <input asp-for="Importo" class="form-control" type="number" required />
+        <span asp-validation-for="Importo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DecurtamentoPunti" class="control-label">Decurtamento Punti</label>
+        <input asp-for="DecurtamentoPunti" class="form-control" type="number" required />
+        <span asp-validation-for="DecurtamentoPunti" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Crea</button>
+    <a asp-action="Index" class="btn btn-secondary">Indietro</a>
+</form>

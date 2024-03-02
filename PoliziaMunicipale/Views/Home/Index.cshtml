@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h2>Benvenuto nel sistema della Polizia Municipale</h2>
+    <ul>
+        <li><a href="@Url.Action("Index", "Trasgressori")">Gestione Trasgressori</a></li>
+        <li><a href="@Url.Action("Index", "Violazioni")">Elenco Violazioni</a></li>
+        <li><a href="@Url.Action("Index", "Verbali")">Compilazione Verbali</a></li>
+    </ul>
+</div>

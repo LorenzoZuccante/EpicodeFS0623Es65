@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PoliziaMunicipale.Data.ViewModels.ViolazioniMaggioriDiQuattrocentoViewModel>
+
+@{
+    ViewData["Title"] = "Violazioni con Importo Maggiore di 400";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Verbale</th>
+            <th>Data Violazione</th>
+            <th>Indirizzo Violazione</th>
+            <th>Importo</th>
+            <th>Punti Decurtati</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IDVerbale</td>
+                <td>@item.DataViolazione.ToString("dd/MM/yyyy")</td>
+                <td>@item.IndirizzoViolazione</td>
+                <td>@String.Format("{0:C}", item.Importo)</td>
+                <td>@item.DecurtamentoPunti</td>
+            </tr>
+        }
+    </tbody>
+</table>
